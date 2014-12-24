@@ -70,12 +70,12 @@
 }
 
 .only-ie11(@rules) {
-  _:-ms-fullscreen, :root .selector & {
+  _:-ms-fullscreen, :root & {
     @rules();
   }
 }
 
-_:-ms-fullscreen, :root .selector {
+_:-ms-fullscreen, :root {
   @only-ie11();
 }
 
