@@ -50,9 +50,9 @@ only-ie6 =
 @require 'path/to/hack-css'
 
 .class
-  +only-ie6
+  +only-ie6()
     hasLayout 1
-  +only-ie7
+  +only-ie7()
     padding 0
 ```
 
