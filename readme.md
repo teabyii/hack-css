@@ -95,12 +95,12 @@ only-ie6 =
 - for-ie9-ie10
 - only-ie11
 - for-saf2-saf3
-- for-saf5-saf6
-    safari 5.1 ~ safari 6
-- for-ff
-    firefox 3.5+
-- for-op
-    opera 9.5+
+- for-saf5-saf6  
+  safari 5.1 ~ safari 6
+- for-ff  
+  firefox 3.5+
+- for-op  
+  opera 9.5+
 
 ## Reference
 
