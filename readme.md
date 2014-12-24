@@ -11,17 +11,17 @@ require less v1.7.0 or later
 
 // give hack for each selector which you need
 .class {
-    .hack-css-ie6({
+    .only-ie6({
         hasLayout: 1;
     })
 
-    .hack-css-ie7({
+    .only-ie7({
         margin: 0;
     })
 }
 
 // give hack for all selector together
-@hack-css-ie6: {
+@only-ie6: {
     .class {
         hasLayout: 1;
     }
@@ -36,7 +36,7 @@ require less v1.7.0 or later
 
 ```stylus
 // use block to give hack to all, but you should require after
-hack-css-ie6 = 
+only-ie6 = 
   .class 
     hasLayout 1
   #id
@@ -50,9 +50,9 @@ hack-css-ie6 =
 @require 'path/to/hack-css'
 
 .class
-  +hack-css-ie6
+  +only-ie6
     hasLayout 1
-  +hack-css-ie7
+  +only-ie7
     padding 0
 ```
 
@@ -61,13 +61,13 @@ hack-css-ie6 =
 ```sass
 // hack each selector
 .class {
-    @include hack-css-ie6 {
+    @include only-ie6 {
         hasLayout: 1;
     }
 }
 
 // hack all selector
-@include hack-css-ie6 {
+@include only-ie6 {
     #id {
         hasLayout: 1;
     }
@@ -76,20 +76,35 @@ hack-css-ie6 =
 
 ```scss
 .class
-  +hack-css-ie6
+  +only-ie6
     hasLayout: 1
 
-+hack-css-ie6
++only-ie6
   .class 
     padding: 0
 ```
 
 ## API list
-```
-```
+
+- only-ie6
+- only-ie7
+- only-ie8
+- for-ie6-ie7
+- for-ie6-to-ie8
+- for-ie8-to-ie10
+- for-ie9-ie10
+- only-ie11
+- for-saf2-saf3
+- for-saf5-saf6
+    safari 5.1 ~ safari 6
+- for-ff
+    firefox 3.5+
+- for-op
+    opera 9.5+
 
 ## Reference
 
+- [all browsers hacks](http://browserhacks.com/)  
 - [css hacks](http://www.paulirish.com/2009/browser-specific-css-hacks/)  
 - [media blocks hacks](http://keithclark.co.uk/articles/moving-ie-specific-css-into-media-blocks/) 
 - [conditionnal stylesheets vs css hacks](http://www.paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/)  
