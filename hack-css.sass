@@ -1,0 +1,91 @@
+=only-ie6
+  @if &
+    * html &
+      @content
+  @else
+    * html
+      @content
+
+=only-ie7
+  @if &
+    *:first-child + html &
+      @content
+  @else
+    *:first-child + html
+      @content
+
+=only-ie8
+  @if &
+    @media \0screen
+      &
+        @content
+  @else
+    @media \0screen
+      @content
+
+=for-ie6-ie7
+  @if &
+    @media screen\9
+      &
+        @content
+  @else
+    @media screen\9
+      @content
+
+=for-ie6-to-ie8
+  @if &
+    @media \0screen\,screen\9
+      &
+        @content
+  @else
+    @media \0screen\,screen\9
+      @content
+
+=for-ie9-ie10
+  @if &
+    @media screen and (min-width: 0)
+      &
+        @content
+  @else
+    @media screen and (min-width: 0)
+      @content
+
+=only-ie11
+  @if &
+    _:-ms-fullscreen, :root &
+      @content
+  @else
+    _:-ms-fullscreen, :root
+      @content
+
+=for-saf2-saf3
+  @if &
+    html[xmlns*=""] body:last-child &
+      @content
+  @else
+    html[xmlns*=""] body:last-child
+      @content
+
+=for-saf5-saf6
+  @if &
+    _::-moz-svg-foreign-content, :root &
+      @content
+  @else
+    _::-moz-svg-foreign-content, :root
+      @content
+
+=for-ff
+  @if &
+    body:not(:-moz-handler-blocked) &
+      @content
+  @else
+    body:not(:-moz-handler-blocked)
+      @content
+
+=for-op
+  @if &
+    _:-o-prefocus, body:last-child &
+      @content
+  @else
+    _:-o-prefocus, body:last-child
+      @content
