@@ -13,36 +13,41 @@ only-ie7()
   {only-ie7}
 
 only-ie8()
-  @media \0screen &
-    {block}
+  @media \0screen
+    &
+      {block}
 
 @media \0screen
   {only-ie8}
 
 for-ie6-ie7()
-  @media screen\9 &
-    {block}
+  @media screen\9
+    &
+      {block}
 
 @media screen\9
   {for-ie6-ie7}
 
 for-ie6-to-ie8()
-  @media \0screen\,screen\9 &
-    {block}
+  @media \0screen\,screen\9
+    &
+      {block}
 
 @media \0screen,screen\9
   {for-ie6-to-ie8}
 
 for-ie8-to-ie10()
-  @media screen\0 &
-    {block}
+  @media screen\0
+    &
+      {block}
 
 @media screen\0
   {for-ie8-to-ie10}
 
 for-ie9-ie10()
-  @media screen and (min-width:0) &
-    {block}
+  @media screen and (min-width:0)
+    &
+      {block}
 
 @media screen and (min-width:0)
   {for-ie9-ie10}

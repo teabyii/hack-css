@@ -20,8 +20,10 @@
 }
 
 .only-ie8(@rules) {
-  @media \0screen & {
-    @rules();
+  @media \0screen {
+    & {
+      @rules();
+    }
   }
 }
 
@@ -30,8 +32,10 @@
 }
 
 .for-ie6-ie7(@rules) {
-  @media screen\9 & {
-    @rules();
+  @media screen\9 {
+    & {
+      @rules();
+    }
   }
 }
 
@@ -40,8 +44,10 @@
 }
 
 .for-ie6-to-ie8(@rules) {
-  @media \0screen\,screen\9 & {
-    @rules();
+  @media \0screen\,screen\9 {
+    & {
+      @rules();
+    }
   }
 }
 
@@ -50,8 +56,10 @@
 }
 
 .for-ie8-to-ie10(@rules) {
-  @media screen\0 & {
-    @rules();
+  @media screen\0 {
+    & {
+      @rules();
+    }
   }
 }
 
@@ -60,8 +68,10 @@
 }
 
 .for-ie9-ie10(@rules) {
-  @media screen and (min-width:0) & {
-    @rules();
+  @media screen and (min-width:0) {
+    & {
+      @rules();
+    }
   }
 }
 

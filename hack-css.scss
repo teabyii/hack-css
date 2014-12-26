@@ -24,8 +24,10 @@
 
 @mixin only-ie8 {
   @if & {
-    @media \0screen & {
-      @content;
+    @media \0screen {
+      & {
+        @content;
+      }
     }
   } @else {
     @media \0screen {
@@ -36,8 +38,10 @@
 
 @mixin for-ie6-ie7 {
   @if & {
-    @media screen\9 & {
-      @content;
+    @media screen\9 {
+      & {
+        @content;
+      }
     }
   } @else {
     @media screen\9 {
@@ -48,8 +52,10 @@
 
 @mixin for-ie6-to-ie8 {
   @if & {
-    @media \0screen\,screen\9 & {
-      @content;
+    @media \0screen\,screen\9 {
+      & {
+        @content;
+      }
     }
   } @else {
     @media \0screen\,screen\9 {
@@ -60,8 +66,10 @@
 
 @mixin for-ie9-ie10 {
   @if & {
-    @media screen and (min-width:0) & {
-      @content;
+    @media screen and (min-width:0) {
+      & {
+        @content;
+      }
     }
   } @else {
     @media screen and (min-width:0) {
