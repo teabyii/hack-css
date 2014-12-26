@@ -84,7 +84,7 @@ only-ie6 =
     padding: 0
 ```
 
-## API list
+## Hack list
 
 - only-ie6
 - only-ie7
