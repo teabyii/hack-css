@@ -1,3 +1,15 @@
+@only-ie6: {};
+@only-ie7: {};
+@only-ie8: {};
+@for-ie6-ie7: {};
+@for-ie6-to-ie8: {};
+@for-ie8-to-ie10: {};
+@for-ie9-ie10: {};
+@only-ie11: {};
+@for-saf2-saf3: {};
+@for-saf5-saf6: {};
+@for-ff: {};
+@for-op: {};
 
 .only-ie6(@rules) {
   * html & {
@@ -19,51 +31,55 @@
   @only-ie7();
 }
 
+@hack-css-ie8: ~"\0screen";
 .only-ie8(@rules) {
-  @media \0screen {
+  @media @hack-css-ie8 {
     & {
       @rules();
     }
   }
 }
 
-@media \0screen {
+@media @hack-css-ie8 {
   @only-ie8();
 }
 
+@hack-css-ie67: ~"screen\9";
 .for-ie6-ie7(@rules) {
-  @media screen\9 {
+  @media @hack-css-ie67 {
     & {
       @rules();
     }
   }
 }
 
-@media screen\9 {
+@media @hack-css-ie67 {
   @for-ie6-ie7();
 }
 
+@hack-css-ie68: ~"\0screen\,screen\9";
 .for-ie6-to-ie8(@rules) {
-  @media \0screen\,screen\9 {
+  @media @hack-css-ie68 {
     & {
       @rules();
     }
   }
 }
 
-@media \0screen\,screen\9 {
+@media @hack-css-ie68 {
   @for-ie6-to-ie8();
 }
 
+@hack-css-ie810: ~"screen\0";
 .for-ie8-to-ie10(@rules) {
-  @media screen\0 {
+  @media @hack-css-ie810 {
     & {
       @rules();
     }
   }
 }
 
-@media screen\0 {
+@media @hack-css-ie810 {
   @for-ie8-to-ie10();
 }
 
@@ -96,7 +112,7 @@ _:-ms-fullscreen, :root {
 }
 
 html[xmlns*=""] body:last-child {
-  @for-sf2-sf3();
+  @for-saf2-saf3();
 }
 
 .for-saf5-saf6(@rules) {
