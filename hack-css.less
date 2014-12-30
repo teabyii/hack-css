@@ -95,8 +95,9 @@
   @or-ie9-ie10();
 }
 
+@hack-css-ie11: ~"_:-ms-fullscreen, :root";
 .only-ie11(@rules) {
-  _:-ms-fullscreen, :root & {
+  @{hack-css-ie11} & {
     @rules();
   }
 }
@@ -115,8 +116,9 @@ html[xmlns*=""] body:last-child {
   @or-saf2-saf3();
 }
 
+@hack-css-saf56: ~"_::-moz-svg-foreign-content, :root";
 .or-saf5-saf6(@rules) {
-  _::-moz-svg-foreign-content, :root & {
+  @{hack-css-saf56} & {
     @rules();
   }
 }
@@ -135,8 +137,9 @@ body:not(:-moz-handler-blocked) {
   @only-ff();
 }
 
+@hack-css-op: ~"_:-o-prefocus, body:last-child";
 .only-op(@rules) {
-  _:-o-prefocus, body:last-child & {
+  @{hack-css-op} & {
     @rules();
   }
 }
