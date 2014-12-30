@@ -63,6 +63,8 @@ $only-ie6 =
 @import 'path/to/hack-css'
 ```
 
+> Note: Now don't support only-ie11, or-saf5-saf6, only-op, in the first way by stylus. If want to hack, please take the second way, sorry.
+
 ### sass & scss
 
 ```sass

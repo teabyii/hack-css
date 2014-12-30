@@ -159,7 +159,7 @@ $hack-css-saf56: unquote("");
       }
     }
   } @else {
-    %hack-css-op :root {
+    %hack-css-op body:last-child {
       @content;
     }
     _:-o-prefocus, {
