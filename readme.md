@@ -36,24 +36,31 @@ require less v1.7.0 or later
 
 ```stylus
 // use block to give hack to all, but you should require after
-only-ie6 = 
+$only-ie6 = 
   .class 
     hasLayout 1
   #id
     padding 0
 
-@require 'path/to/hack-css'
+@import 'path/to/hack-css'
 ```
 
 ```stylus
 // use block mixin to hack each selector
-@require 'path/to/hack-css'
+@import 'path/to/hack-css'
 
 .class
   +only-ie6()
     hasLayout 1
   +only-ie7()
     padding 0
+```
+
+```stylus
+// if you want both
+@import 'path/to/hack-css'
+... // your code
+@import 'path/to/hack-css'
 ```
 
 ### sass & scss
@@ -89,17 +96,17 @@ only-ie6 =
 - only-ie6
 - only-ie7
 - only-ie8
-- for-ie6-ie7
-- for-ie6-to-ie8
-- for-ie8-to-ie10
-- for-ie9-ie10
+- or-ie6-ie7
+- or-ie6-ie7-ie8
+- or-ie8-ie9-ie10
+- or-ie9-ie10
 - only-ie11
-- for-saf2-saf3
-- for-saf5-saf6  
+- or-saf2-saf3
+- or-saf5-saf6  
   safari 5.1 ~ safari 6
-- for-ff  
+- only-ff  
   firefox 3.5+
-- for-op  
+- only-op  
   opera 9.5+
 
 ## Reference

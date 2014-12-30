@@ -1,15 +1,15 @@
 @only-ie6: {};
 @only-ie7: {};
 @only-ie8: {};
-@for-ie6-ie7: {};
-@for-ie6-to-ie8: {};
-@for-ie8-to-ie10: {};
-@for-ie9-ie10: {};
+@or-ie6-ie7: {};
+@or-ie6-ie7-ie8: {};
+@or-ie8-ie9-ie10: {};
+@or-ie9-ie10: {};
 @only-ie11: {};
-@for-saf2-saf3: {};
-@for-saf5-saf6: {};
-@for-ff: {};
-@for-op: {};
+@or-saf2-saf3: {};
+@or-saf5-saf6: {};
+@only-ff: {};
+@only-op: {};
 
 .only-ie6(@rules) {
   * html & {
@@ -45,7 +45,7 @@
 }
 
 @hack-css-ie67: ~"screen\9";
-.for-ie6-ie7(@rules) {
+.or-ie6-ie7(@rules) {
   @media @hack-css-ie67 {
     & {
       @rules();
@@ -54,11 +54,11 @@
 }
 
 @media @hack-css-ie67 {
-  @for-ie6-ie7();
+  @or-ie6-ie7();
 }
 
 @hack-css-ie68: ~"\0screen\,screen\9";
-.for-ie6-to-ie8(@rules) {
+.or-ie6-ie7-ie8(@rules) {
   @media @hack-css-ie68 {
     & {
       @rules();
@@ -67,11 +67,11 @@
 }
 
 @media @hack-css-ie68 {
-  @for-ie6-to-ie8();
+  @or-ie6-ie7-ie8();
 }
 
 @hack-css-ie810: ~"screen\0";
-.for-ie8-to-ie10(@rules) {
+.or-ie8-ie9-ie10(@rules) {
   @media @hack-css-ie810 {
     & {
       @rules();
@@ -80,10 +80,10 @@
 }
 
 @media @hack-css-ie810 {
-  @for-ie8-to-ie10();
+  @or-ie8-ie9-ie10();
 }
 
-.for-ie9-ie10(@rules) {
+.or-ie9-ie10(@rules) {
   @media screen and (min-width:0) {
     & {
       @rules();
@@ -92,7 +92,7 @@
 }
 
 @media screen and (min-width:0) {
-  @for-ie9-ie10();
+  @or-ie9-ie10();
 }
 
 .only-ie11(@rules) {
@@ -105,42 +105,42 @@ _:-ms-fullscreen, :root {
   @only-ie11();
 }
 
-.for-saf2-saf3(@rules) {
+.or-saf2-saf3(@rules) {
   html[xmlns*=""] body:last-child & {
     @rules();
   }
 }
 
 html[xmlns*=""] body:last-child {
-  @for-saf2-saf3();
+  @or-saf2-saf3();
 }
 
-.for-saf5-saf6(@rules) {
+.or-saf5-saf6(@rules) {
   _::-moz-svg-foreign-content, :root & {
     @rules();
   }
 }
 
 _::-moz-svg-foreign-content, :root {
-  @for-saf5-saf6();
+  @or-saf5-saf6();
 }
 
-.for-ff(@rules) {
+.only-ff(@rules) {
   body:not(:-moz-handler-blocked) & {
     @rules();
   }
 }
 
 body:not(:-moz-handler-blocked) {
-  @for-ff();
+  @only-ff();
 }
 
-.for-op(@rules) {
+.only-op(@rules) {
   _:-o-prefocus, body:last-child & {
     @rules();
   }
 }
 
 _:-o-prefocus, body:last-child {
-  @for-op();
+  @only-op();
 }

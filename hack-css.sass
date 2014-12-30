@@ -23,25 +23,34 @@
     @media \0screen
       @content
 
-=for-ie6-ie7
+=or-ie6-ie7
   @if &
-    @media screen\9
+    @media screen\9 
       &
         @content
   @else
-    @media screen\9
+    @media screen\9 
       @content
 
-=for-ie6-to-ie8
+=or-ie6-ie7-ie8
   @if &
-    @media \0screen\,screen\9
+    @media \0screen\,screen\9 
       &
         @content
   @else
-    @media \0screen\,screen\9
+    @media \0screen\,screen\9 
       @content
 
-=for-ie9-ie10
+=or-ie8-ie9-ie10
+  @if &
+    @media screen\0 
+      &
+        @content
+  @else
+    @media screen\0 
+      @content
+
+=or-ie9-ie10
   @if &
     @media screen and (min-width: 0)
       &
@@ -58,7 +67,7 @@
     _:-ms-fullscreen, :root
       @content
 
-=for-saf2-saf3
+=or-saf2-saf3
   @if &
     html[xmlns*=""] body:last-child &
       @content
@@ -66,7 +75,7 @@
     html[xmlns*=""] body:last-child
       @content
 
-=for-saf5-saf6
+=or-saf5-saf6
   @if &
     _::-moz-svg-foreign-content, :root &
       @content
@@ -74,7 +83,7 @@
     _::-moz-svg-foreign-content, :root
       @content
 
-=for-ff
+=only-ff
   @if &
     body:not(:-moz-handler-blocked) &
       @content
@@ -82,7 +91,7 @@
     body:not(:-moz-handler-blocked)
       @content
 
-=for-op
+=only-op
   @if &
     _:-o-prefocus, body:last-child &
       @content

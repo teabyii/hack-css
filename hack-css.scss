@@ -36,7 +36,7 @@
   }
 }
 
-@mixin for-ie6-ie7 {
+@mixin or-ie6-ie7 {
   @if & {
     @media screen\9 {
       & {
@@ -50,7 +50,7 @@
   }
 }
 
-@mixin for-ie6-to-ie8 {
+@mixin or-ie6-ie7-ie8 {
   @if & {
     @media \0screen\,screen\9 {
       & {
@@ -64,7 +64,21 @@
   }
 }
 
-@mixin for-ie9-ie10 {
+@mixin or-ie8-ie9-ie10 {
+  @if & {
+    @media screen\0 {
+      & {
+        @content;
+      }
+    }
+  } @else {
+    @media screen\0 {
+      @content;
+    }
+  }
+}
+
+@mixin or-ie9-ie10 {
   @if & {
     @media screen and (min-width:0) {
       & {
@@ -90,7 +104,7 @@
   }
 }
 
-@mixin for-saf2-saf3 {
+@mixin or-saf2-saf3 {
   @if & {
     html[xmlns*=""] body:last-child & {
       @content;
@@ -102,7 +116,7 @@
   }
 }
 
-@mixin for-saf5-saf6 {
+@mixin or-saf5-saf6 {
   @if & {
     _::-moz-svg-foreign-content, :root & {
       @content;
@@ -114,7 +128,7 @@
   }
 }
 
-@mixin for-ff {
+@mixin only-ff {
   @if & {
     body:not(:-moz-handler-blocked) & {
       @content;
@@ -126,7 +140,7 @@
   }
 }
 
-@mixin for-op {
+@mixin only-op {
   @if & {
     _:-o-prefocus, body:last-child & {
       @content;

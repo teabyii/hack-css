@@ -3,86 +3,86 @@ only-ie6()
     {block}
 
 * html
-  {only-ie6}
+  {$only-ie6}
 
 only-ie7()
   *:first-child+html &
     {block}
 
 *:first-child+html
-  {only-ie7}
+  {$only-ie7}
 
+$hack-css-ie8 = '@media \0screen'
 only-ie8()
-  @media \0screen
-    &
-      {block}
+  {$hack-css-ie8} &
+    {block}
 
-@media \0screen
-  {only-ie8}
+{$hack-css-ie8}
+  {$only-ie8}
 
-for-ie6-ie7()
-  @media screen\9
-    &
-      {block}
+$hack-css-ie67 = '@media screen\9'
+or-ie6-ie7()
+  {$hack-css-ie67} &
+    {block}
 
-@media screen\9
-  {for-ie6-ie7}
+{$hack-css-ie67}
+  {$or-ie6-ie7}
 
-for-ie6-to-ie8()
-  @media \0screen\,screen\9
-    &
-      {block}
+$hack-css-ie68 = '@media \0screen\,screen\9'
+or-ie6-ie7-ie8()
+  {$hack-css-ie68} &
+    {block}
 
-@media \0screen,screen\9
-  {for-ie6-to-ie8}
+{$hack-css-ie68}
+  {$or-ie6-ie7-ie8}
 
-for-ie8-to-ie10()
-  @media screen\0
-    &
-      {block}
+$hack-css-ie810 = '@media screen\0'
+or-ie8-ie9-ie10()
+  {$hack-css-ie810} &
+    {block}
 
-@media screen\0
-  {for-ie8-to-ie10}
+{$hack-css-ie810}
+  {$or-ie8-ie9-ie10}
 
-for-ie9-ie10()
+or-ie9-ie10()
   @media screen and (min-width:0)
     &
       {block}
 
 @media screen and (min-width:0)
-  {for-ie9-ie10}
+  {$or-ie9-ie10}
 
 only-ie11()
   _:-ms-fullscreen, :root &
     {block}
 
 _:-ms-fullscreen, :root
-  {only-ie11}
+  {$only-ie11}
 
-for-saf2-saf3()
+or-saf2-saf3()
   html[xmlns*=""] body:last-child &
     {block}
 
 html[xmlns*=""] body:last-child
-  {for-saf2-saf3}
+  {$or-saf2-saf3}
 
-for-saf5-saf6()
+or-saf5-saf6()
   _::-moz-svg-foreign-content, :root &
     {block}
 
 _::-moz-svg-foreign-content, :root
-  {for-saf5-saf6}
+  {$or-saf5-saf6}
 
-for-ff()
+only-ff()
   body:not(:-moz-handler-blocked) &
     {block}
 
 body:not(:-moz-handler-blocked)
-  {for-ff}
+  {$only-ff}
 
-for-op()
+only-op()
   _:-o-prefocus, body:last-child &
     {block}
 
 _:-o-prefocus, body:last-child
-  {for-op}
+  {$only-op}
