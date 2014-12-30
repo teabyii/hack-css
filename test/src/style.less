@@ -1,0 +1,58 @@
+@import "../../hack-css.less";
+
+.test1 {
+  .only-ie6({
+    background: red;
+  });
+
+  .only-ie7({
+    background: purple;
+  });
+
+  .only-ie8({
+    background: green;
+  });
+
+  .only-ie11({
+    background: yellow;
+  });
+
+  .only-ff({
+    background: orange;
+  });
+
+  .only-op({
+    background: blue;
+  });
+}
+
+
+.test2 {
+  .or-saf2-saf3({
+    background: red;
+  });
+
+  .or-saf5-saf6({
+    background: purple;
+  });
+
+  .or-ie6-ie7-ie8({
+    background: green;
+  });
+
+  .or-ie9-ie10({
+    background: blue;
+  });
+}
+
+@or-ie6-ie7: {
+  .test3 {
+    background: red;
+  }
+};
+
+@or-ie8-ie9-ie10: {
+  .test3 {
+    background: purple;
+  }
+};
