@@ -94,12 +94,17 @@
 
 @mixin only-ie11 {
   @if & {
-    _:-ms-fullscreen, :root & {
-      @content;
+    @at-root {
+      _:-ms-fullscreen, :root & {
+        @content;
+      }
     }
   } @else {
-    _:-ms-fullscreen, :root {
+    %hack-css-ie11 :root {
       @content;
+    }
+    _:-ms-fullscreen, {
+      @extend %hack-css-ie11;
     }
   }
 }
@@ -116,14 +121,20 @@
   }
 }
 
+$hack-css-saf56: unquote("");
 @mixin or-saf5-saf6 {
   @if & {
-    _::-moz-svg-foreign-content, :root & {
-      @content;
+    @at-root {
+      _::-moz-svg-foreign-content, :root & {
+        @content;
+      }
     }
   } @else {
-    _::-moz-svg-foreign-content, :root {
+    %hack-css-saf56 :root {
       @content;
+    }
+    _::-moz-svg-foreign-content, {
+      @extend %hack-css-saf56;
     }
   }
 }
@@ -142,12 +153,17 @@
 
 @mixin only-op {
   @if & {
-    _:-o-prefocus, body:last-child & {
-      @content;
+    @at-root {
+      _:-o-prefocus, body:last-child & {
+        @content;
+      }
     }
   } @else {
-    _:-o-prefocus, body:last-child {
+    %hack-css-op :root {
       @content;
+    }
+    _:-o-prefocus, {
+      @extend %hack-css-op;
     }
   }
 }
